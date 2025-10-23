@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Food Delivery Logistics – SMS Notifications Opt-In</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 32px; max-width: 820px; }
+    h1, h2 { margin: 0 0 12px; }
+    .card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px; margin: 18px 0; }
+    label { font-weight: 600; display:block; margin: 10px 0 6px; }
+    input[type="text"], input[type="email"], input[type="tel"] { width: 100%; padding: 10px; border:1px solid #cbd5e1; border-radius: 8px; }
+    button { padding: 10px 16px; border: 0; border-radius: 8px; background:#111827; color:white; font-weight:600; cursor:pointer; }
+    small { color:#6b7280; }
+    footer { margin-top:24px; font-size: 14px; color:#374151; }
+    .muted { color:#6b7280; }
+  </style>
+</head>
+<body>
+
+  <h1>Food Delivery Logistics – SMS Notifications</h1>
+  <div class="card">
+    <p><strong>Owner:</strong> Siddhartha Palle &nbsp;•&nbsp;
+       <strong>Email:</strong> <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a> &nbsp;•&nbsp;
+       <strong>Phone:</strong> +1 (972) 787-9921</p>
+    <p>This student prototype sends <em>transactional</em> SMS updates for delivery confirmations, pickup notifications, and status reminders to users who opt in. No marketing messages are sent.</p>
+  </div>
+
+  <h2>Opt-In Form</h2>
+  <form class="card" aria-label="SMS Opt-In (demo)">
+    <label for="name">Full Name</label>
+    <input id="name" type="text" placeholder="Enter your full name" />
+
+    <label for="email">Email <span class="muted">*</span></label>
+    <input id="email" type="email" placeholder="Enter your email" required />
+
+    <label for="phone">Phone Number</label>
+    <input id="phone" type="tel" placeholder="Enter your phone number" />
+
+    <p>
+      <input id="consent" type="checkbox" required />
+      <label for="consent" style="display:inline;font-weight:400">
+        I consent to receive SMS text messages from <strong>Food Delivery Logistics</strong> about delivery confirmations, pickup updates, and status notifications. Message &amp; data rates may apply. Text <strong>HELP</strong> for help, reply <strong>STOP</strong> to unsubscribe.
+      </label>
+    </p>
+
+    <p><a href="#privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="#terms">Terms of Service</a></p>
+    <button type="submit" disabled>Submit (Demo)</button>
+    <p><small class="muted">This is a demo page for verification; the submit button is disabled.</small></p>
+  </form>
+
+  <h2>Purpose of Messages</h2>
+  <ul class="card">
+    <li>Delivery confirmations</li>
+    <li>Pickup notifications</li>
+    <li>Status updates</li>
+  </ul>
+
+  <h2 id="privacy">Privacy Policy</h2>
+  <div class="card">
+    <p>We do not sell or share user data. Phone numbers are used only to send delivery-related SMS updates. Users can opt out anytime by replying <strong>STOP</strong>. For help, reply <strong>HELP</strong> or email <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a>.</p>
+  </div>
+
+  <h2 id="terms">Terms of Service</h2>
+  <div class="card">
+    <p>By opting in, you agree to receive <em>transactional</em> SMS notifications from Food Delivery Logistics. Frequency varies by order activity. Message &amp; data rates may apply. No marketing or promotional messages are sent.</p>
+  </div>
+
+  <footer>
+    <p><strong>Contact</strong>: Siddhartha Palle • <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a> • +1 (972) 787-9921</p>
+    <p class="muted">© Food Delivery Logistics – Student Project</p>
+  </footer>
+</body>
+</html>
