@@ -3,115 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CampusCuisines — Student Trip Logistics & SMS Updates</title>
-  <meta name="description" content="CampusCuisines provides pre-scheduled student trip logistics. We send transactional SMS only: sign-ups, confirmations/cancellations, and pickup/arrival ETAs.">
+  <title>CampusCuisines — SMS Opt-In</title>
   <style>
-    :root{--max:920px}
-    *{box-sizing:border-box}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;line-height:1.6;background:#fff;color:#111}
-    header{background:#f6f7fb;border-bottom:1px solid #e5e7eb}
-    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
-    nav a{margin-right:16px;text-decoration:none;color:#111}
-    h1{margin:12px 0 4px;font-size:28px}
-    h1 a{text-decoration:none;color:inherit}
-    h1 a:focus, h1 a:hover{text-decoration:underline}
-    h2{margin:0 0 8px;font-size:22px}
-    h3{margin:10px 0 6px;font-size:18px}
-    main{max-width:var(--max);margin:0 auto;padding:24px 20px}
-    section{margin:28px 0}
-    .card{border:1px solid #e5e7eb;border-radius:14px;padding:18px;background:#fff}
-    ul{padding-left:20px}
-    footer{background:#fafafa;border-top:1px solid #eee}
-    footer .wrap{font-size:14px;display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between}
-    .pill{display:inline-block;padding:2px 8px;border:1px solid #e5e7eb;border-radius:999px;font-size:12px}
-    a.btn{display:inline-block;border:1px solid #111;border-radius:10px;padding:10px 14px;text-decoration:none}
-    .muted{color:#555}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0}
+    header{background:#111;color:#fff;padding:18px}
+    main{max-width:720px;margin:0 auto;padding:24px}
+    .card{border:1px solid #e5e7eb;border-radius:12px;padding:18px}
+    label{display:block;margin:8px 0 4px}
+    input[type="tel"]{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:10px}
+    .row{display:flex;gap:10px;align-items:flex-start;margin-top:10px}
+    .row input[type="checkbox"]{margin-top:4px}
+    button{border:1px solid #111;border-radius:10px;padding:10px 14px;background:#fff;cursor:pointer}
+    .ok{margin-top:12px;border:1px solid #22c55e;background:#f0fdf4;padding:10px;border-radius:10px;display:none}
   </style>
 </head>
 <body>
   <header>
-    <div class="wrap">
-      <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms & SMS Terms</a>
-        <a href="./opt-in.html" target="_blank" rel="noopener">Opt-In</a>
-      </nav>
-      <!-- Make the title clickable to the opt-in page -->
-      <h1><a href="./opt-in.html" target="_blank" rel="noopener">CampusCuisines</a></h1>
-      <p class="muted">Pre-scheduled student trip logistics with driver ETAs and status updates via SMS (transactional only).</p>
-    </div>
+    <h1>CampusCuisines — SMS Opt-In</h1>
   </header>
 
   <main>
-    <section id="about" class="card" aria-labelledby="about-h">
-      <h2 id="about-h">About</h2>
-      <p><strong>CampusCuisines</strong> connects students and vetted drivers for planned trips (e.g., home ↔ campus). We use SMS strictly for operational messages: sign-up confirmations, trip confirmations or cancellations, and pickup/arrival ETAs. <strong>No marketing texts.</strong></p>
-      <p><span class="pill">Service area</span> Austin, TX</p>
-    </section>
+    <section class="card">
+      <p><strong>Transactional texts only.</strong> Sign-up confirm, trip confirm/cancel, pickup/arrival ETAs. Msg &amp; data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. Frequency: up to 4 msgs per trip.</p>
 
-    <section id="contact" class="card" aria-labelledby="contact-h">
-      <h2 id="contact-h">Contact</h2>
-      <p>Email: <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a></p>
-      <p>City/State: Austin, TX</p>
-      <p>Support hours: Mon–Fri, 9am–6pm CT</p>
-    </section>
+      <form id="optinForm" onsubmit="return handleSubmit(event)">
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="e.g., 512-555-0123" required />
 
-    <section id="privacy" class="card" aria-labelledby="privacy-h">
-      <h2 id="privacy-h">Privacy Policy</h2>
-      <p>We collect only the information needed to operate trips and send operational SMS (e.g., name, phone number, trip details). We do not sell personal data. Limited service providers (e.g., messaging, payments, analytics) may process data solely to provide the service and are bound by confidentiality obligations.</p>
-      <p>You may request access, correction, or deletion of your data by emailing <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a>. We retain data only as long as necessary to fulfill the purposes described or as required by law.</p>
-      <p>For California and other applicable regions, you may have additional rights. Contact us to exercise them.</p>
-      <p class="muted">Last updated: <span class="mono" id="lastUpdated"></span></p>
-    </section>
+        <div class="row">
+          <input id="consent" name="consent" type="checkbox" required />
+          <label for="consent" style="margin:0;">
+            I agree to receive transactional SMS from <strong>CampusCuisines</strong>. Consent is not a condition of purchase.
+          </label>
+        </div>
 
-    <section id="terms" class="card" aria-labelledby="terms-h">
-      <h2 id="terms-h">Terms &amp; SMS Terms</h2>
-      <h3>Use of Service</h3>
-      <p>By using CampusCuisines you agree to receive transactional messages related to your trips. You are responsible for ensuring your contact information is accurate.</p>
+        <button type="submit">I Agree & Opt In</button>
+        <div id="ok" class="ok">Thanks! (Demo) Your consent was recorded.</div>
+      </form>
 
-      <h3>SMS Terms</h3>
-      <ul>
-        <li><strong>Purpose</strong>: transactional trip updates (sign-ups, confirmations/cancellations, pickup/arrival ETAs). No marketing.</li>
-        <li><strong>Frequency</strong>: up to 4 msgs per trip (typical: sign-up confirm, trip confirm/cancel, pickup ETA, arrival).</li>
-        <li><strong>Message &amp; data rates may apply.</strong></li>
-        <li>Reply <strong>STOP</strong> to opt out; reply <strong>HELP</strong> for help.</li>
-        <li>For assistance, email <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a>.</li>
-        <li>Consent is not a condition of purchase.</li>
-      </ul>
-      <p class="muted">Shortened links and promotional content are not used.</p>
-    </section>
-
-    <section id="optin" class="card" aria-labelledby="optin-h">
-      <h2 id="optin-h">Opt-In</h2>
-      <p>To consent to receive transactional texts from CampusCuisines, use our opt-in form. The consent checkbox is <strong>unchecked by default</strong> and explicitly names the sender (CampusCuisines).</p>
-      <!-- Big button to opt-in -->
-      <p><a class="btn" href="./opt-in.html" target="_blank" rel="noopener">Open SMS Opt-In Form</a></p>
-    </section>
-
-    <section class="card" aria-labelledby="samples-h">
-      <h2 id="samples-h">Sample Transactional SMS</h2>
-      <ul>
-        <li>CampusCuisines: Trip confirmed for 11/02 5:30 PM @ Jester Circle. Reply STOP to opt out, HELP for help.</li>
-        <li>CampusCuisines: Driver 7 min away (ETA 5:42 PM). Reply STOP to opt out.</li>
-        <li>CampusCuisines: Trip canceled; you weren’t charged. Reply STOP to opt out.</li>
-      </ul>
-      <p class="muted">Samples illustrate message purpose and opt-out language for verification reviewers.</p>
+      <p style="margin-top:12px">Need help? Email <a href="mailto:siddupalle11@gmail.com">siddupalle11@gmail.com</a>.</p>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      <div>© <span id="y"></span> CampusCuisines — Transactional SMS only</div>
-      <div><a href="#privacy">Privacy</a> • <a href="#terms">Terms</a> • <a href="./opt-in.html" target="_blank" rel="noopener">Opt-In</a></div>
-    </div>
-  </footer>
-
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('lastUpdated').textContent = 'Oct 30, 2025';
+    function handleSubmit(e){ e.preventDefault(); document.getElementById('ok').style.display='block'; return false; }
   </script>
 </body>
 </html>
