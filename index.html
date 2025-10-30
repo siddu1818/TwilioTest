@@ -13,6 +13,8 @@
     .wrap{max-width:var(--max);margin:0 auto;padding:20px}
     nav a{margin-right:16px;text-decoration:none;color:#111}
     h1{margin:12px 0 4px;font-size:28px}
+    h1 a{text-decoration:none;color:inherit}
+    h1 a:focus, h1 a:hover{text-decoration:underline}
     h2{margin:0 0 8px;font-size:22px}
     h3{margin:10px 0 6px;font-size:18px}
     main{max-width:var(--max);margin:0 auto;padding:24px 20px}
@@ -35,9 +37,10 @@
         <a href="#contact">Contact</a>
         <a href="#privacy">Privacy</a>
         <a href="#terms">Terms & SMS Terms</a>
-        <a href="#optin">Opt-In</a>
+        <a href="https://siddu1818.github.io/TwilioTest/opt-in.html" target="_blank" rel="noopener">Opt-In</a>
       </nav>
-      <h1>CampusCuisines</h1>
+      <!-- Title links to the opt-in page -->
+      <h1><a href="https://siddu1818.github.io/TwilioTest/opt-in.html" target="_blank" rel="noopener">CampusCuisines</a></h1>
       <p class="muted">Pre-scheduled student trip logistics with driver ETAs and status updates via SMS (transactional only).</p>
     </div>
   </header>
@@ -84,7 +87,8 @@
     <section id="optin" class="card" aria-labelledby="optin-h">
       <h2 id="optin-h">Opt-In</h2>
       <p>To consent to receive transactional texts from CampusCuisines, use our opt-in form. The consent checkbox is <strong>unchecked by default</strong> and explicitly names the sender (CampusCuisines).</p>
-      <p><a class="btn" href="./opt-in.html" target="_blank" rel="noopener">Open SMS Opt-In Form</a></p>
+      <!-- Big button to opt-in -->
+      <p><a class="btn" href="https://siddu1818.github.io/TwilioTest/opt-in.html" target="_blank" rel="noopener">Open SMS Opt-In Form</a></p>
     </section>
 
     <section class="card" aria-labelledby="samples-h">
@@ -101,7 +105,11 @@
   <footer>
     <div class="wrap">
       <div>© <span id="y"></span> CampusCuisines — Transactional SMS only</div>
-      <div><a href="#privacy">Privacy</a> • <a href="#terms">Terms</a> • <a href="#optin">Opt-In</a></div>
+      <div>
+        <a href="#privacy">Privacy</a> •
+        <a href="#terms">Terms</a> •
+        <a href="https://siddu1818.github.io/TwilioTest/opt-in.html" target="_blank" rel="noopener">Opt-In</a>
+      </div>
     </div>
   </footer>
 
